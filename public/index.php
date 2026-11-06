@@ -3,8 +3,10 @@
 
 declare(strict_types=1);
 
+use UMM\Pemweb\Controllers\BerandaController;
 use UMM\Pemweb\Controllers\DompetController;
 use UMM\Pemweb\Controllers\KategoriController;
+use UMM\Pemweb\Controllers\TransaksiController;
 use UMM\Pemweb\Core\Router;
 
 // 1) Autoload: pakai Composer kalau ada, kalau tidak pakai autoloader sederhana.
@@ -47,6 +49,7 @@ set_exception_handler(function (Throwable $e): void {
 $router = new Router();
 
 // === RUTE BERANDA ===
+$router->get('/', [BerandaController::class, 'index']);
 
 // === RUTE KATEGORI ===
 $router->get('/kategori', [KategoriController::class, 'index']);
@@ -65,6 +68,12 @@ $router->post('/dompet/ubah', [DompetController::class, 'perbarui']);
 $router->post('/dompet/hapus', [DompetController::class, 'hapus']);
 
 // === RUTE TRANSAKSI ===
+$router->get('/transaksi', [TransaksiController::class, 'index']);
+$router->get('/transaksi/tambah', [TransaksiController::class, 'tambah']);
+$router->post('/transaksi', [TransaksiController::class, 'simpan']);
+$router->get('/transaksi/ubah', [TransaksiController::class, 'ubah']);
+$router->post('/transaksi/ubah', [TransaksiController::class, 'perbarui']);
+$router->post('/transaksi/hapus', [TransaksiController::class, 'hapus']);
 
 // 4) Path bersih (tanpa base path & query string), lalu dispatch.
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) ?: '/';
