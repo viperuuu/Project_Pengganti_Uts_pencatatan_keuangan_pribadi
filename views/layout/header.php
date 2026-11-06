@@ -4,7 +4,7 @@ $menu = [
     '/' => 'Beranda',
     // '/transaksi' => 'Transaksi',
     // '/kategori'  => 'Kategori',
-    // '/dompet'    => 'Dompet',
+    '/dompet'    => 'Dompet',
 ];
 $pathSaatIni = '/' . trim(substr(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) ?: '/', strlen(BASE_URL)), '/');
 $aktif = static fn (string $path): bool => $path === '/' ? $pathSaatIni === '/' : str_starts_with($pathSaatIni, $path);

@@ -3,6 +3,7 @@
 
 declare(strict_types=1);
 
+use UMM\Pemweb\Controllers\DompetController;
 use UMM\Pemweb\Core\Router;
 
 // 1) Autoload: pakai Composer kalau ada, kalau tidak pakai autoloader sederhana.
@@ -49,6 +50,12 @@ $router = new Router();
 // === RUTE KATEGORI ===
 
 // === RUTE DOMPET ===
+$router->get('/dompet', [DompetController::class, 'index']);
+$router->get('/dompet/tambah', [DompetController::class, 'tambah']);
+$router->post('/dompet', [DompetController::class, 'simpan']);
+$router->get('/dompet/ubah', [DompetController::class, 'ubah']);
+$router->post('/dompet/ubah', [DompetController::class, 'perbarui']);
+$router->post('/dompet/hapus', [DompetController::class, 'hapus']);
 
 // === RUTE TRANSAKSI ===
 
