@@ -3,7 +3,7 @@
 $menu = [
     '/' => 'Beranda',
     // '/transaksi' => 'Transaksi',
-    // '/kategori'  => 'Kategori',
+    '/kategori'  => 'Kategori',
     // '/dompet'    => 'Dompet',
 ];
 $pathSaatIni = '/' . trim(substr(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH) ?: '/', strlen(BASE_URL)), '/');
