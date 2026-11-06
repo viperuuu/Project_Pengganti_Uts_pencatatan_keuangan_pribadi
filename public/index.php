@@ -4,6 +4,7 @@
 declare(strict_types=1);
 
 use UMM\Pemweb\Controllers\DompetController;
+use UMM\Pemweb\Controllers\KategoriController;
 use UMM\Pemweb\Core\Router;
 
 // 1) Autoload: pakai Composer kalau ada, kalau tidak pakai autoloader sederhana.
@@ -48,6 +49,12 @@ $router = new Router();
 // === RUTE BERANDA ===
 
 // === RUTE KATEGORI ===
+$router->get('/kategori', [KategoriController::class, 'index']);
+$router->get('/kategori/tambah', [KategoriController::class, 'tambah']);
+$router->post('/kategori', [KategoriController::class, 'simpan']);
+$router->get('/kategori/ubah', [KategoriController::class, 'ubah']);
+$router->post('/kategori/ubah', [KategoriController::class, 'perbarui']);
+$router->post('/kategori/hapus', [KategoriController::class, 'hapus']);
 
 // === RUTE DOMPET ===
 $router->get('/dompet', [DompetController::class, 'index']);
