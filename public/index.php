@@ -3,6 +3,7 @@
 
 declare(strict_types=1);
 
+use UMM\Pemweb\Controllers\DompetController;
 use UMM\Pemweb\Controllers\KategoriController;
 use UMM\Pemweb\Core\Router;
 
@@ -56,6 +57,12 @@ $router->post('/kategori/ubah', [KategoriController::class, 'perbarui']);
 $router->post('/kategori/hapus', [KategoriController::class, 'hapus']);
 
 // === RUTE DOMPET ===
+$router->get('/dompet', [DompetController::class, 'index']);
+$router->get('/dompet/tambah', [DompetController::class, 'tambah']);
+$router->post('/dompet', [DompetController::class, 'simpan']);
+$router->get('/dompet/ubah', [DompetController::class, 'ubah']);
+$router->post('/dompet/ubah', [DompetController::class, 'perbarui']);
+$router->post('/dompet/hapus', [DompetController::class, 'hapus']);
 
 // === RUTE TRANSAKSI ===
 
