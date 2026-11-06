@@ -2,7 +2,7 @@
 /** @var string $judul */
 $menu = [
     '/'          => 'Beranda',
-    // '/transaksi' => 'Transaksi',
+    '/transaksi' => 'Transaksi',
     '/kategori'  => 'Kategori',
     '/dompet'    => 'Dompet',
 ];
